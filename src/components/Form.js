@@ -5,6 +5,7 @@ class Form extends React.Component {
     return (
       <fieldset>
         <label htmlFor="name" data-testid="name-input">
+          Nome
           <input
             id="name"
             type="text"
@@ -12,12 +13,14 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="description" data-testid="description-input">
+          Descrição
           <textarea
             name="description"
             id="description"
           />
         </label>
         <label htmlFor="attr1" data-testid="attr1-input">
+          Attr01
           <input
             id="attr1"
             type="number"
@@ -25,6 +28,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr2" data-testid="attr2-input">
+          Attr2
           <input
             id="attr2"
             type="number"
@@ -32,6 +36,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr3" data-testid="attr3-input">
+          Attr3
           <input
             id="attr3"
             type="number"
@@ -39,6 +44,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="image" data-testid="image-input">
+          Imagem
           <input
             id="image"
             type="text"
@@ -46,6 +52,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="rare">
+          Raridade
           <select name="rare" id="rare" data-testid="rare-input">
             <option value="normal">normal</option>
             <option value="raro">raro</option>
@@ -53,6 +60,7 @@ class Form extends React.Component {
           </select>
         </label>
         <label htmlFor="rare" data-testid="trunfo-input">
+          Super Trybe Trunfo
           <input
             type="checkbox"
             name="isTrunfo"
