@@ -9,7 +9,7 @@ const INITIAL_STATE = {
   cardAttr2: '',
   cardAttr3: '',
   cardImage: '',
-  cardRare: '',
+  cardRare: 'normal',
   cardTrunfo: false,
   hasTrunfo: false,
 };
