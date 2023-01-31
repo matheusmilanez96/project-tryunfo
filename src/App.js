@@ -62,10 +62,20 @@ class App extends React.Component {
         cardTrunfo: false,
         hasTrunfo: true,
         isSaveButtonDisabled: true,
-        cardList: [],
       });
     } else {
-      this.setState(INITIAL_STATE);
+      this.setState({
+        cardName: '',
+        cardDescription: '',
+        cardAttr1: '0',
+        cardAttr2: '0',
+        cardAttr3: '0',
+        cardImage: '',
+        cardRare: 'normal',
+        cardTrunfo: false,
+        hasTrunfo: false,
+        isSaveButtonDisabled: true,
+      });
     }
   };
 
@@ -132,35 +142,56 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
+      cardList,
     } = this.state;
     return (
-      <fieldset>
-        <Form
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          hasTrunfo={ hasTrunfo }
-          onInputChange={ this.onInputChange }
-          onSaveButtonClick={ this.onSaveButtonClick }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-        />
-        <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          hasTrunfo={ hasTrunfo }
-        />
-      </fieldset>
+      <div>
+        <fieldset>
+          <Form
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+            hasTrunfo={ hasTrunfo }
+            onInputChange={ this.onInputChange }
+            onSaveButtonClick={ this.onSaveButtonClick }
+            isSaveButtonDisabled={ isSaveButtonDisabled }
+          />
+          <Card
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+            hasTrunfo={ hasTrunfo }
+          />
+        </fieldset>
+        <ul>
+          {
+            cardList.map((currentCard) => (
+              <Card
+                key={ currentCard.cardName }
+                cardName={ currentCard.cardName }
+                cardDescription={ currentCard.cardDescription }
+                cardAttr1={ currentCard.cardAttr1 }
+                cardAttr2={ currentCard.cardAttr2 }
+                cardAttr3={ currentCard.cardAttr3 }
+                cardImage={ currentCard.cardImage }
+                cardRare={ currentCard.cardRare }
+                cardTrunfo={ currentCard.cardTrunfo }
+                hasTrunfo={ currentCard.hasTrunfo }
+              />
+            ))
+          }
+        </ul>
+      </div>
     );
   }
 }
