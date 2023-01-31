@@ -36,7 +36,7 @@ class App extends React.Component {
       cardAttr2,
       cardAttr3,
       cardRare,
-      hasTrunfo,
+      cardTrunfo,
       cardList,
     } = this.state;
     const newCard = {
@@ -47,10 +47,26 @@ class App extends React.Component {
       cardAttr2,
       cardAttr3,
       cardRare,
-      hasTrunfo,
+      cardTrunfo,
     };
     cardList.push(newCard);
-    this.setState(INITIAL_STATE);
+    if (cardTrunfo) {
+      this.setState({
+        cardName: '',
+        cardDescription: '',
+        cardAttr1: '0',
+        cardAttr2: '0',
+        cardAttr3: '0',
+        cardImage: '',
+        cardRare: 'normal',
+        cardTrunfo: false,
+        hasTrunfo: true,
+        isSaveButtonDisabled: true,
+        cardList: [],
+      });
+    } else {
+      this.setState(INITIAL_STATE);
+    }
   };
 
   onInputChange({ target }) {
